@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steven Green | Portfolio</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        purdueGold: '#CFB991',
+                        purdueBlack: '#000000',
+                        corpBlue: '#0f172a', /* Tailwind slate-900 */
+                        corpGray: '#f8fafc', /* Tailwind slate-50 */
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for a polished look */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CFB991;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #b5a17d;
+        }
+    </style>
+</head>
+<body class="font-sans bg-corpGray text-gray-800 antialiased selection:bg-purdueGold selection:text-white">
+
+    <!-- Navigation Bar -->
+    <nav class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#home" class="text-2xl font-bold text-white tracking-tight">
+                        Steven<span class="text-purdueGold">Green</span>
+                    </a>
+                </div>
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-gray-300 hover:text-purdueGold px-3 py-2 text-sm font-medium transition-colors">About Me</a>
+                    <a href="#interests" class="text-gray-300 hover:text-purdueGold px-3 py-2 text-sm font-medium transition-colors">Interests</a>
+                    <a href="#projects" class="text-gray-300 hover:text-purdueGold px-3 py-2 text-sm font-medium transition-colors">Projects</a>
+                    <a href="#goals" class="text-gray-300 hover:text-purdueGold px-3 py-2 text-sm font-medium transition-colors">Goals</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-corpBlue border-t border-gray-700">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#about" class="block text-gray-300 hover:text-purdueGold px-3 py-2 text-base font-medium">About Me</a>
+                <a href="#interests" class="block text-gray-300 hover:text-purdueGold px-3 py-2 text-base font-medium">Interests</a>
+                <a href="#projects" class="block text-gray-300 hover:text-purdueGold px-3 py-2 text-base font-medium">Projects</a>
+                <a href="#goals" class="block text-gray-300 hover:text-purdueGold px-3 py-2 text-base font-medium">Goals</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero / About Section -->
+    <section id="home" class="relative bg-corpBlue pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Abstract Background Decoration -->
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 rounded-full bg-purdueGold opacity-10 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-80 h-80 rounded-full bg-blue-500 opacity-10 blur-3xl"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="lg:w-2/3">
+                <p class="text-purdueGold font-semibold tracking-wide uppercase text-sm mb-2">Portfolio & Resume</p>
+                <h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white tracking-tight mb-6">
+                    Hi, I'm <span class="text-purdueGold">Steven Green</span>.
+                </h1>
+                <h2 class="text-xl sm:text-2xl text-gray-300 font-light mb-8 leading-relaxed">
+                    Marketing & Finance Double Major at <span class="font-semibold text-white">Purdue University</span>. <br class="hidden sm:block"/>
+                    Currently serving as a Resident Assistant and driven by analytical strategy and creative business solutions.
+                </h2>
+                
+                <div id="about" class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-6 sm:p-8 mt-12 shadow-2xl">
+                    <h3 class="text-2xl font-bold text-white mb-4"><i class="fas fa-user-circle text-purdueGold mr-2"></i> About Me</h3>
+                    <p class="text-gray-300 leading-relaxed">
+                        I am passionate about bridging the gap between quantitative financial metrics and qualitative marketing strategies. My dual academic focus at Purdue provides me with a unique lens to approach business challenges—understanding both the numbers that drive profitability and the human behavior that drives markets. As a Resident Assistant, I've developed strong leadership, conflict resolution, and community-building skills, which translate seamlessly into professional, cross-functional team environments.
+                    </p>
+                    <div class="mt-6 flex flex-wrap gap-4">
+                        <a href="#projects" class="bg-purdueGold hover:bg-yellow-600 text-purdueBlack font-semibold py-3 px-6 rounded-lg transition duration-300 shadow-lg transform hover:-translate-y-1">
+                            View My Work
+                        </a>
+                        <a href="https://linkedin.com" target="_blank" class="bg-transparent border border-gray-500 hover:border-purdueGold text-white hover:text-purdueGold font-semibold py-3 px-6 rounded-lg transition duration-300 flex items-center">
+                            <i class="fab fa-linkedin text-xl mr-2"></i> Connect on LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interests Section -->
+    <section id="interests" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-corpBlue mb-4">Beyond the Classroom</h2>
+                <div class="w-20 h-1 bg-purdueGold mx-auto rounded"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">A look into the hobbies and technical explorations that keep me inspired and continuously learning.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Interest 1 -->
+                <div class="bg-corpGray rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 group">
+                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-music"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-corpBlue mb-3">R&B & Funk Piano</h3>
+                    <p class="text-gray-600">
+                        Music is my creative outlet. I enjoy playing and composing piano pieces inspired by R&B and funk genres, finding rhythm and harmony in complex chords.
+                    </p>
+                </div>
+
+                <!-- Interest 2 -->
+                <div class="bg-corpGray rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 group">
+                    <div class="w-14 h-14 bg-teal-100 text-teal-600 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:bg-teal-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-corpBlue mb-3">Bank & Pier Fishing</h3>
+                    <p class="text-gray-600">
+                        I value patience and the outdoors. Bank and pier fishing provides a fantastic way to disconnect, reflect, and appreciate the environment.
+                    </p>
+                </div>
+
+                <!-- Interest 3 -->
+                <div class="bg-corpGray rounded-xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 group">
+                    <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-lg flex items-center justify-center text-2xl mb-6 group-hover:bg-purple-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-corpBlue mb-3">AI Models & Scripting</h3>
+                    <p class="text-gray-600">
+                        Passionate about the future of tech. I spend time exploring local AI models, experimenting with prompts, and writing scripts to automate workflows and discover new possibilities.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-corpGray">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-corpBlue mb-4">Featured Projects</h2>
+                <div class="w-20 h-1 bg-purdueGold mx-auto rounded"></div>
+                <p class="mt-4 text-gray-600 max-w-2xl mx-auto">Showcasing my ability to blend academic theory with practical, data-driven business analysis.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 flex flex-col h-full hover:shadow-2xl transition-shadow duration-300">
+                    <div class="bg-green-800 p-6 flex justify-between items-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black opacity-20"></div>
+                        <h3 class="text-2xl font-bold text-white relative z-10">Starbucks Marketing Research</h3>
+                        <i class="fas fa-coffee text-white/50 text-6xl absolute -right-4 -bottom-4"></i>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center mb-4 space-x-2">
+                                <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-semibold rounded-full">Marketing Strategy</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full">Data Analysis</span>
+                            </div>
+                            <h4 class="text-xl font-semibold text-corpBlue mb-3">Retail Store Density Analysis</h4>
+                            <p class="text-gray-600 mb-6">
+                                Conducted comprehensive research to evaluate how the geographic density of Starbucks retail locations impacts regional sales performance and brand perception. Synthesized consumer data to identify market saturation points and provided actionable recommendations for optimized store placement.
+                            </p>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-500 font-medium border-t border-gray-100 pt-4">
+                            <li><i class="fas fa-check text-purdueGold mr-2"></i> Market Saturation Modeling</li>
+                            <li><i class="fas fa-check text-purdueGold mr-2"></i> Consumer Behavior Analytics</li>
+                            <li><i class="fas fa-check text-purdueGold mr-2"></i> Strategic Expansion Recommendations</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 flex flex-col h-full hover:shadow-2xl transition-shadow duration-300">
+                    <div class="bg-blue-900 p-6 flex justify-between items-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-black opacity-20"></div>
+                        <h3 class="text-2xl font-bold text-white relative z-10">Financial Modeling</h3>
+                        <i class="fas fa-chart-line text-white/50 text-6xl absolute -right-4 -bottom-4"></i>
+                    </div>
+                    <div class="p-8 flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center mb-4 space-x-2">
+                                <span class="px-3 py-1 bg-green-100 text-green-700 text-xs font-semibold rounded-full">Corporate Finance</span>
+                                <span class="px-3 py-1 bg-gray-100 text-gray-700 text-xs font-semibold rounded-full">Excel</span>
+                            </div>
+                            <h4 class="text-xl font-semibold text-corpBlue mb-3">Macroeconomic & Valuation Analysis</h4>
+                            <p class="text-gray-600 mb-6">
+                                Developed intricate financial models incorporating macroeconomic indicators to forecast corporate performance. The project focused heavily on constructing detailed pro forma statements and executing rigorous free cash flow (FCF) analyses to determine intrinsic company valuations.
+                            </p>
+                        </div>
+                        <ul class="space-y-2 text-sm text-gray-500 font-medium border-t border-gray-100 pt-4">
+                            <li><i class="fas fa-check text-purdueGold mr-2"></i> Pro Forma Financial Statements</li>
+                            <li><i class="fas fa-check text-purdueGold mr-2"></i> Free Cash Flow (FCF) Analysis</li>
+                            <li><i class="fas fa-check text-purdueGold mr-2"></i> Macroeconomic Trend Integration</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goals / Looking Forward Section -->
+    <section id="goals" class="py-20 bg-white relative overflow-hidden">
+        <!-- Background accents -->
+        <div class="absolute right-0 bottom-0 w-1/3 h-full bg-slate-50 transform -skew-x-12 translate-x-20"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-corpBlue mb-4">Looking Forward</h2>
+                    <div class="w-20 h-1 bg-purdueGold mb-6"></div>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        As I look toward my upcoming summer internships and post-graduation career, my goal is to leverage my dual background in Marketing and Finance to drive measurable growth.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        I am actively seeking roles in <strong class="text-corpBlue">corporate marketing, sales, and business development</strong>. I am particularly drawn to the fast-paced and impactful environments of the <strong class="text-corpBlue">pharmaceutical and beverage industries</strong>, where brand strategy and financial viability are intimately connected.
+                    </p>
+                    
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-corpGray p-4 rounded-lg border border-gray-200">
+                            <i class="fas fa-bullseye text-2xl text-purdueGold mb-2"></i>
+                            <h4 class="font-bold text-corpBlue">Target Roles</h4>
+                            <p class="text-sm text-gray-500 mt-1">Marketing, Sales, Biz Dev</p>
+                        </div>
+                        <div class="bg-corpGray p-4 rounded-lg border border-gray-200">
+                            <i class="fas fa-industry text-2xl text-purdueGold mb-2"></i>
+                            <h4 class="font-bold text-corpBlue">Target Industries</h4>
+                            <p class="text-sm text-gray-500 mt-1">Pharmaceuticals, Beverages</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Graphic/Visual Representation of Goals -->
+                <div class="lg:w-1/2 w-full">
+                    <div class="bg-corpBlue rounded-2xl p-8 shadow-2xl relative">
+                        <div class="absolute top-0 right-0 p-4 opacity-20">
+                            <i class="fas fa-rocket text-6xl text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-6">Career Trajectory</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex">
+                                <div class="flex flex-col items-center mr-4">
+                                    <div class="w-4 h-4 rounded-full bg-purdueGold"></div>
+                                    <div class="w-0.5 h-full bg-gray-600 my-1"></div>
+                                </div>
+                                <div class="pb-6">
+                                    <h4 class="text-lg font-semibold text-white">Purdue University</h4>
+                                    <p class="text-gray-400 text-sm">Marketing & Finance Double Major, RA</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="flex flex-col items-center mr-4">
+                                    <div class="w-4 h-4 rounded-full border-2 border-purdueGold bg-transparent"></div>
+                                    <div class="w-0.5 h-full bg-gray-600 my-1"></div>
+                                </div>
+                                <div class="pb-6">
+                                    <h4 class="text-lg font-semibold text-purdueGold">Summer Internship</h4>
+                                    <p class="text-gray-400 text-sm">Seeking opportunities in Corporate Marketing/Sales</p>
+                                </div>
+                            </div>
+
+                            <div class="flex">
+                                <div class="flex flex-col items-center mr-4">
+                                    <div class="w-4 h-4 rounded-full border-2 border-gray-500 bg-transparent"></div>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold text-gray-400">Post-Graduation</h4>
+                                    <p class="text-gray-500 text-sm">Business Development in Pharma/Beverage</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-corpBlue text-white border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <span class="text-2xl font-bold tracking-tight">
+                        Steven<span class="text-purdueGold">Green</span>
+                    </span>
+                    <p class="text-gray-400 text-sm mt-2">Marketing & Finance • Purdue University</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-purdueGold transition-colors">
+                        <span class="sr-only">LinkedIn</span>
+                        <i class="fab fa-linkedin text-2xl"></i>
+                    </a>
+                    <a href="mailto:contact@example.com" class="text-gray-400 hover:text-purdueGold transition-colors">
+                        <span class="sr-only">Email</span>
+                        <i class="fas fa-envelope text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+                <p>&copy; <span id="year"></span> Steven Green. All rights reserved.</p>
+                <p class="mt-2 md:mt-0">Designed for LinkedIn Portfolio Integration</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Navbar background on scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('bg-corpBlue', 'shadow-lg');
+                navbar.classList.remove('bg-transparent', 'py-2');
+            } else {
+                navbar.classList.remove('bg-corpBlue', 'shadow-lg');
+                navbar.classList.add('bg-transparent', 'py-2');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu on link click
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>
