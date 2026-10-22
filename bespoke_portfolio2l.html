@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steven Green | Marketing & Finance Portfolio</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        charcoal: {
+                            950: '#0c0e0c',
+                            900: '#111311',
+                            800: '#1a1d1a',
+                            700: '#262b26',
+                        },
+                        avocado: {
+                            light: '#A3B879',
+                            DEFAULT: '#87A96B',
+                            dark: '#6B8E23',
+                        },
+                        offwhite: '#F9FAF8',
+                        crispwhite: '#F4F5F0',
+                        sagegray: '#A3ABA0',
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #111311;
+            color: #F4F5F0;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111311;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262b26;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #87A96B;
+        }
+        .glow-ring {
+            box-shadow: 0 0 25px -5px rgba(135, 169, 107, 0.35);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased selection:bg-avocado selection:text-charcoal-950">
+
+    <!-- 1. Navigation Bar -->
+    <nav class="sticky top-0 w-full z-50 bg-charcoal-900/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Brand / Logo -->
+                <a href="#home" class="flex items-center gap-2.5 text-xl font-semibold tracking-tight text-crispwhite hover:text-avocado transition-colors">
+                    <span class="w-2.5 h-2.5 rounded-full bg-avocado inline-block"></span>
+                    Steven Green
+                </a>
+
+                <!-- Desktop Links -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#about" class="text-sm font-medium text-sagegray hover:text-avocado transition-colors">About</a>
+                    <a href="#projects" class="text-sm font-medium text-sagegray hover:text-avocado transition-colors">Projects</a>
+                    <a href="#goals" class="text-sm font-medium text-sagegray hover:text-avocado transition-colors">Goals</a>
+                    <a href="#interests" class="text-sm font-medium text-sagegray hover:text-avocado transition-colors">Interests</a>
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-avocado text-charcoal-950 font-semibold text-sm hover:bg-avocado-light transition-all duration-200 shadow-sm">
+                        Connect on LinkedIn
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-sagegray hover:text-crispwhite focus:outline-none p-2 rounded-lg">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-charcoal-800 border-b border-white/10 px-6 pt-3 pb-6 space-y-3">
+            <a href="#about" class="block text-sagegray hover:text-avocado py-2 text-base font-medium">About</a>
+            <a href="#projects" class="block text-sagegray hover:text-avocado py-2 text-base font-medium">Projects</a>
+            <a href="#goals" class="block text-sagegray hover:text-avocado py-2 text-base font-medium">Goals</a>
+            <a href="#interests" class="block text-sagegray hover:text-avocado py-2 text-base font-medium">Interests</a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="block w-full text-center mt-2 px-4 py-2.5 rounded-lg bg-avocado text-charcoal-950 font-semibold text-sm hover:bg-avocado-light transition-all">
+                Connect on LinkedIn
+            </a>
+        </div>
+    </nav>
+
+    <!-- 2. Hero Section -->
+    <section id="home" class="relative py-20 lg:py-28 border-b border-white/10 overflow-hidden">
+        <!-- Subtle background radial gradient -->
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(135,169,107,0.08),_transparent_50%)] pointer-events-none"></div>
+
+        <div class="max-w-6xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="flex flex-col md:flex-row items-center md:items-start lg:items-center gap-10 lg:gap-14">
+                
+                <!-- Profile Photo Frame & Interactive Uploader -->
+                <div class="flex flex-col items-center shrink-0">
+                    <div class="relative group cursor-pointer" onclick="document.getElementById('photo-upload').click()" title="Click to preview your photo">
+                        <div class="w-40 h-40 sm:w-48 sm:h-48 rounded-full p-1.5 bg-gradient-to-tr from-avocado-dark via-avocado to-avocado-light ring-4 ring-[#87A96B]/40 glow-ring transition-transform duration-300 group-hover:scale-[1.02]">
+                            <div class="w-full h-full rounded-full overflow-hidden bg-charcoal-800 relative flex items-center justify-center border-2 border-charcoal-900">
+                                
+                                <!-- ================================================================= -->
+                                <!-- HEADSHOT IMAGE CONFIGURATION                                      -->
+                                <!-- Checks for image_d0035d.jpg first, then falls back to profile.jpg -->
+                                <!-- ================================================================= -->
+                                <img 
+                                    id="profile-img" 
+                                    src="image_d0035d.jpg" 
+                                    onerror="if (this.src.indexOf('profile.jpg') === -1) { this.src = 'profile.jpg'; } else { this.src = 'https://placehold.co/400x400/1a1d1a/87A96B?text=SG'; }"
+                                    alt="Steven Green" 
+                                    class="w-full h-full object-cover object-top"
+                                />
+
+                                <!-- Hover Overlay for Previewing -->
+                                <div class="absolute inset-0 bg-charcoal-950/75 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex flex-col items-center justify-center text-center p-4">
+                                    <svg class="w-6 h-6 text-avocado mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    <span class="text-xs font-medium text-crispwhite">Change / Preview Photo</span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Status Dot -->
+                        <span class="absolute bottom-3 right-3 w-4 h-4 rounded-full bg-avocado border-2 border-charcoal-900" title="Open to opportunities"></span>
+                    </div>
+
+                    <!-- Interactive File Input & GitHub Helper Button -->
+                    <input type="file" id="photo-upload" accept="image/*" class="hidden" onchange="previewPhoto(event)">
+                    <div class="mt-3 flex items-center gap-2">
+                        <button onclick="document.getElementById('photo-upload').click()" class="text-xs text-sagegray hover:text-avocado flex items-center gap-1.5 border border-white/10 hover:border-avocado/40 bg-charcoal-800/70 px-3 py-1.5 rounded-full transition-colors">
+                            <svg class="w-3.5 h-3.5 text-avocado" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"></path>
+                            </svg>
+                            Preview Local Photo
+                        </button>
+                        <button onclick="togglePhotoModal()" class="text-xs text-sagegray hover:text-crispwhite border border-white/10 hover:border-white/30 bg-charcoal-800/70 px-2.5 py-1.5 rounded-full transition-colors" title="How to save photo on GitHub">
+                            ?
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hero Text Content -->
+                <div class="text-center md:text-left flex-1">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-avocado/10 border border-avocado/30 text-avocado-light text-xs font-medium mb-4">
+                        <span>Purdue University • Daniels School of Business</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-crispwhite mb-4">
+                        Hi, I'm <span class="text-avocado">Steven Green.</span>
+                    </h1>
+
+                    <h2 class="text-xl sm:text-2xl font-medium text-crispwhite/90 mb-4">
+                        Marketing Major with a Minor in Finance at Purdue University
+                    </h2>
+
+                    <p class="text-base sm:text-lg text-sagegray max-w-2xl leading-relaxed mb-8">
+                        Connecting creative brand storytelling with disciplined financial strategy. Focused on understanding consumer behavior and backing marketing decisions with real numbers.
+                    </p>
+
+                    <!-- Call to Action Buttons -->
+                    <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                        <a href="#projects" class="px-6 py-3 rounded-lg bg-avocado text-charcoal-950 font-semibold text-sm hover:bg-avocado-light transition-all duration-200 shadow-sm flex items-center gap-2">
+                            View My Work
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="px-6 py-3 rounded-lg bg-charcoal-800 text-crispwhite border border-white/15 hover:border-avocado hover:text-avocado font-medium text-sm transition-all duration-200 flex items-center gap-2">
+                            <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                            Connect on LinkedIn
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. About Me Section (Crisp Off-White Contrast Section) -->
+    <section id="about" class="py-20 bg-offwhite text-charcoal-900 border-b border-charcoal-900/10">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+                
+                <!-- Section Header & Quick Highlights Card -->
+                <div class="lg:col-span-5">
+                    <span class="text-xs font-bold uppercase tracking-widest text-avocado-dark block mb-2">01 / Background</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-charcoal-900 mb-6">
+                        About Me
+                    </h2>
+                    
+                    <div class="bg-white p-6 rounded-xl border border-charcoal-900/10 shadow-sm space-y-4">
+                        <div class="flex items-start gap-3.5">
+                            <div class="p-2 rounded-lg bg-avocado/15 text-avocado-dark mt-0.5">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-semibold text-charcoal-900">Education</h3>
+                                <p class="text-sm text-charcoal-700">B.S. in Marketing, Minor in Finance - Purdue University</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5">
+                            <div class="p-2 rounded-lg bg-avocado/15 text-avocado-dark mt-0.5">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-semibold text-charcoal-900">Campus Leadership</h3>
+                                <ul class="text-sm text-charcoal-700 space-y-2 mt-1">
+                                    <li>
+                                        <span class="font-medium text-charcoal-900">VP of Fundraising & Community Service</span> - Society of Minority Managers (SMM) Executive Board
+                                    </li>
+                                    <li>
+                                        <span class="font-medium text-charcoal-900">Resident Assistant (RA)</span> - Mentorship, conflict resolution & floor community building
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5">
+                            <div class="p-2 rounded-lg bg-avocado/15 text-avocado-dark mt-0.5">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-sm font-semibold text-charcoal-900">Core Focus</h3>
+                                <p class="text-sm text-charcoal-700">B2B & Brand Marketing, Consumer Behavior, Market Research & Financial ROI</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Narrative Paragraphs -->
+                <div class="lg:col-span-7 space-y-5 text-base sm:text-lg text-charcoal-800 leading-relaxed">
+                    <p>
+                        What drew me to marketing in the first place is simple: I like figuring out why people and businesses choose the brands they do. Good marketing isn't just about putting a product in front of someone, it's about understanding how decisionmakers think, telling a story that actually resonates, and building trust over time.
+                    </p>
+                    <p>
+                        At the same time, adding a minor in finance changed how I look at creative work. A great campaign idea is only half the picture; it also has to make sense on a spreadsheet. Studying finance gave me the analytical foundation to look at marketing through the lens of unit economics, cash flow, and real return on investment. I enjoy sitting right at that intersection, where brand and B2B strategy meet business reality.
+                    </p>
+                    <p>
+                        Outside of the classroom at Purdue, I stay deeply involved in campus leadership. As the <strong class="font-semibold text-charcoal-900">VP of Fundraising and Community Service</strong> on the Executive Board for the <strong class="font-semibold text-charcoal-900">Society of Minority Managers (SMM)</strong>, I lead fundraising initiatives, partner outreach, and service projects. Alongside my role as a <strong class="font-semibold text-charcoal-900">Resident Assistant</strong>, these experiences have taught me how to manage people, communicate clearly, and stay level-headed when solving unexpected problems.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Projects & Academic Work Section -->
+    <section id="projects" class="py-20 bg-charcoal-900 border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-xs font-bold uppercase tracking-widest text-avocado block mb-2">02 / Portfolio</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-crispwhite">
+                        Projects & Academic Work
+                    </h2>
+                </div>
+                <p class="text-sagegray text-sm sm:text-base mt-3 md:mt-0 max-w-md">
+                    Selected research reports, case analyses, and financial models completed at Purdue University.
+                </p>
+            </div>
+
+            <!-- Structured Project Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Project Card 1 -->
+                <div class="group bg-charcoal-800 rounded-xl p-7 border border-white/10 hover:border-avocado transition-all duration-300 flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="p-3 rounded-lg bg-avocado/10 text-avocado border border-avocado/20">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-charcoal-700 text-avocado-light border border-white/5">
+                                Marketing Research
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-crispwhite mb-3 group-hover:text-avocado transition-colors">
+                            Retail Store Density & Geographic Saturation Analysis (Starbucks)
+                        </h3>
+                        <p class="text-sm text-sagegray leading-relaxed mb-6">
+                            Group marketing research report evaluating store distribution, regional footprints, and market saturation across U.S. metropolitan areas to identify expansion vs. cannibalization trends.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-white/10">
+                        <span class="text-xs text-sagegray bg-charcoal-900 px-2.5 py-1 rounded">Market Saturation</span>
+                        <span class="text-xs text-sagegray bg-charcoal-900 px-2.5 py-1 rounded">Spatial Data</span>
+                        <span class="text-xs text-sagegray bg-charcoal-900 px-2.5 py-1 rounded">Expansion Strategy</span>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="group bg-charcoal-800 rounded-xl p-7 border border-white/10 hover:border-avocado transition-all duration-300 flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="p-3 rounded-lg bg-avocado/10 text-avocado border border-avocado/20">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-charcoal-700 text-avocado-light border border-white/5">
+                                Corporate Finance
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-crispwhite mb-3 group-hover:text-avocado transition-colors">
+                            Pro Forma Financial Modeling & Free Cash Flow Valuation
+                        </h3>
+                        <p class="text-sm text-sagegray leading-relaxed mb-6">
+                            Built multi-year pro forma financial statements calculating free cash flows (FCF), capital expenditures, working capital adjustments, and long-term growth projections to evaluate strategic business investments.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-white/10">
+                        <span class="text-xs text-sagegray bg-charcoal-900 px-2.5 py-1 rounded">Free Cash Flow</span>
+                        <span class="text-xs text-sagegray bg-charcoal-900 px-2.5 py-1 rounded">Pro Forma Modeling</span>
+                        <span class="text-xs text-sagegray bg-charcoal-900 px-2.5 py-1 rounded">Valuation</span>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="group bg-charcoal-800 rounded-xl p-7 border border-white/10 hover:border-avocado transition-all duration-300 flex flex-col justify-between shadow-lg">
+                    <div>
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="p-3 rounded-lg bg-avocado/10 text-avocado border border-avocado/20">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                </svg>
+                            </div>
+                            <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-charcoal-700 text-avocado-light border border-white/5">
+                                Corporate Strategy
+                            </span>
+                        </div>
+                        <h3 class="text-xl font-semibold text-crispwhite mb-3 group-hover:text-avocado transition-colors">
+                            Strategic Management & Competitive Market Evaluation
+                        </h3>
+                        <p class="text-sm text-sagegray leading-relaxed mb-6">
+                            Comprehensive case analysis applying Rothaermel's strategic management principles and the CAGE distance framework to assess corporate strategy, international expansion, and competitive market positioning.
+                        </p>
+                    </div>
+                    <div class="flex flex-wrap gap-2 pt-4 border-t border-white/10">
+                        <span class="text-xs text-sagegray bg-charcoal-900 px-2.5 py-1 rounded">CAGE Framework</span>
+                        <span class="text-xs text-sagegray bg-charcoal-900 px-2.5 py-1 rounded">Rothaermel</span>
+                        <span class="text-xs text-sagegray bg-charcoal-900 px-2.5 py-1 rounded">Market Positioning</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. What I'm Interested In Doing (Future Goals / Career Interests) -->
+    <section id="goals" class="py-20 bg-charcoal-800 border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-avocado block mb-2">03 / Looking Ahead</span>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-crispwhite">
+                    What I'm Interested In Doing
+                </h2>
+                <p class="text-sagegray text-sm sm:text-base mt-2 max-w-2xl">
+                    Where I want to apply my marketing and finance background next.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Goal 1: Corporate & B2B Marketing -->
+                <div class="bg-charcoal-900 p-8 rounded-xl border border-white/10 hover:border-avocado/60 transition-all duration-300 relative overflow-hidden">
+                    <div class="w-10 h-10 rounded-lg bg-avocado/15 text-avocado flex items-center justify-center mb-5">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-crispwhite mb-3">
+                        B2B & Corporate Marketing, Brand Strategy, and Sales
+                    </h3>
+                    <p class="text-sagegray text-sm sm:text-base leading-relaxed mb-5">
+                        I am pursuing opportunities in <span class="text-crispwhite font-medium">B2B marketing</span>, corporate brand management, and business development—particularly within high-impact industries like <span class="text-crispwhite font-medium">pharmaceuticals</span>, <span class="text-crispwhite font-medium">enterprise solutions</span>, and <span class="text-crispwhite font-medium">consumer beverages</span>. I enjoy longer-cycle relationship building and helping organizations position their solutions with clear, measurable value.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full bg-avocado/10 text-avocado-light border border-avocado/20">B2B Marketing</span>
+                        <span class="text-xs font-medium px-3 py-1 rounded-full bg-avocado/10 text-avocado-light border border-avocado/20">Brand Strategy</span>
+                        <span class="text-xs font-medium px-3 py-1 rounded-full bg-avocado/10 text-avocado-light border border-avocado/20">Sales & Business Dev</span>
+                        <span class="text-xs font-medium px-3 py-1 rounded-full bg-avocado/10 text-avocado-light border border-avocado/20">Pharma & Beverage</span>
+                    </div>
+                </div>
+
+                <!-- Goal 2: Software Automation & Workflow Optimization -->
+                <div class="bg-charcoal-900 p-8 rounded-xl border border-white/10 hover:border-avocado/60 transition-all duration-300 relative overflow-hidden">
+                    <div class="w-10 h-10 rounded-lg bg-avocado/15 text-avocado flex items-center justify-center mb-5">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-crispwhite mb-3">
+                        Software Automation & Workflow Optimization
+                    </h3>
+                    <p class="text-sagegray text-sm sm:text-base leading-relaxed mb-5">
+                        I am interested in building cleaner digital workflows and using modern software automation to eliminate repetitive work. Whether it's connecting CRM systems, automating reporting pipelines, or streamlining market research data, I always find it fascinating to come up with practical ways to help marketing and finance teams work faster and more accurately.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="text-xs font-medium px-3 py-1 rounded-full bg-avocado/10 text-avocado-light border border-avocado/20">Software Automation</span>
+                        <span class="text-xs font-medium px-3 py-1 rounded-full bg-avocado/10 text-avocado-light border border-avocado/20">Process Efficiency</span>
+                        <span class="text-xs font-medium px-3 py-1 rounded-full bg-avocado/10 text-avocado-light border border-avocado/20">Data & CRM Workflows</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Personal Interests & Hobbies -->
+    <section id="interests" class="py-20 bg-charcoal-900 border-b border-white/10">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="mb-12">
+                <span class="text-xs font-bold uppercase tracking-widest text-avocado block mb-2">04 / Off the Clock</span>
+                <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-crispwhite">
+                    Personal Interests & Hobbies
+                </h2>
+                <p class="text-sagegray text-sm sm:text-base mt-2">
+                    How I recharge and spend my time outside of work and classes.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <!-- Hobby 1: Bike Rides -->
+                <div class="bg-charcoal-800 p-7 rounded-xl border border-white/10 hover:border-avocado/60 transition-all duration-300">
+                    <div class="w-11 h-11 rounded-lg bg-avocado/10 border border-avocado/25 text-avocado flex items-center justify-center mb-5">
+                        <!-- Bicycle SVG Icon -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <circle cx="5.5" cy="17.5" r="3.5" stroke-width="1.75"/>
+                            <circle cx="18.5" cy="17.5" r="3.5" stroke-width="1.75"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M15 6a1 1 0 100-2 1 1 0 000 2zm-3 11.5V14l-3-3 4-3 2 3h2"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-crispwhite mb-2">Bike Rides</h3>
+                    <p class="text-sm text-sagegray leading-relaxed">
+                        I enjoy riding my bike to places I've never seen before as a way to disconnect and clear my mind.
+                    </p>
+                </div>
+
+                <!-- Hobby 2: Piano & Guitar -->
+                <div class="bg-charcoal-800 p-7 rounded-xl border border-white/10 hover:border-avocado/60 transition-all duration-300">
+                    <div class="w-11 h-11 rounded-lg bg-avocado/10 border border-avocado/25 text-avocado flex items-center justify-center mb-5">
+                        <!-- Music Note SVG Icon -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-crispwhite mb-2">Piano & Guitar</h3>
+                    <p class="text-sm text-sagegray leading-relaxed">
+                        Playing R&B and funk-inspired arrangements on piano and practicing chord progressions and rhythm on guitar.
+                    </p>
+                </div>
+
+                <!-- Hobby 3: Software & Tech Tinkering -->
+                <div class="bg-charcoal-800 p-7 rounded-xl border border-white/10 hover:border-avocado/60 transition-all duration-300">
+                    <div class="w-11 h-11 rounded-lg bg-avocado/10 border border-avocado/25 text-avocado flex items-center justify-center mb-5">
+                        <!-- Code / Terminal SVG Icon -->
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.75" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-lg font-semibold text-crispwhite mb-2">Software & Tech Tinkering</h3>
+                    <p class="text-sm text-sagegray leading-relaxed">
+                        Experimenting with software automation, building custom web projects (like hosting this site on GitHub), and figuring out how digital tools work under the hood.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Photo Helper Modal -->
+    <div id="photo-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/75 backdrop-blur-sm p-4">
+        <div class="bg-charcoal-800 border border-white/15 rounded-2xl max-w-md w-full p-6 shadow-2xl">
+            <div class="flex items-center justify-between mb-4">
+                <h3 class="text-base font-semibold text-crispwhite flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-avocado"></span>
+                    Saving Your Photo on GitHub
+                </h3>
+                <button onclick="togglePhotoModal()" class="text-sagegray hover:text-crispwhite text-sm">✕</button>
+            </div>
+            <p class="text-xs sm:text-sm text-sagegray leading-relaxed mb-4">
+                To make your headshot permanent on your live GitHub website:
+            </p>
+            <ol class="text-xs sm:text-sm text-crispwhite/90 space-y-2.5 list-decimal list-inside mb-6">
+                <li>Save your headshot image on your computer as <code class="px-1.5 py-0.5 rounded bg-charcoal-950 text-avocado font-mono">profile.jpg</code>.</li>
+                <li>Go to your GitHub repository and click <strong>Add file &rarr; Upload files</strong>.</li>
+                <li>Drag and drop <code class="px-1.5 py-0.5 rounded bg-charcoal-950 text-avocado font-mono">profile.jpg</code> into the browser and click <strong>Commit changes</strong>.</li>
+            </ol>
+            <button onclick="togglePhotoModal()" class="w-full py-2.5 rounded-lg bg-avocado text-charcoal-950 font-semibold text-xs sm:text-sm hover:bg-avocado-light transition-colors">
+                Got It
+            </button>
+        </div>
+    </div>
+
+    <!-- 7. Footer -->
+    <footer class="bg-charcoal-950 py-14">
+        <div class="max-w-6xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 pb-8 border-b border-white/10">
+                <div>
+                    <a href="#home" class="flex items-center justify-center md:justify-start gap-2 text-lg font-semibold text-crispwhite">
+                        <span class="w-2.5 h-2.5 rounded-full bg-avocado inline-block"></span>
+                        Steven Green
+                    </a>
+                    <p class="text-sm text-sagegray mt-1 text-center md:text-left">
+                        Marketing Major & Finance Minor • Purdue University
+                    </p>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-charcoal-800 hover:bg-avocado text-crispwhite hover:text-charcoal-950 text-sm font-medium border border-white/10 transition-colors flex items-center gap-2">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                        </svg>
+                        LinkedIn
+                    </a>
+                    <a href="mailto:steven@example.com" class="px-4 py-2 rounded-lg bg-charcoal-800 hover:bg-avocado text-crispwhite hover:text-charcoal-950 text-sm font-medium border border-white/10 transition-colors flex items-center gap-2">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        Email
+                    </a>
+                    <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="px-4 py-2 rounded-lg bg-charcoal-800 hover:bg-avocado text-crispwhite hover:text-charcoal-950 text-sm font-medium border border-white/10 transition-colors flex items-center gap-2">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                        </svg>
+                        GitHub
+                    </a>
+                </div>
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row justify-between items-center text-xs text-sagegray">
+                <p>&copy; <span id="year"></span> Steven Green. All rights reserved.</p>
+                
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Interactive Photo Previewer for testing LinkedIn photo immediately
+        function previewPhoto(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const img = document.getElementById('profile-img');
+                    img.src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+        // Toggle instructions modal for GitHub photo upload
+        function togglePhotoModal() {
+            const modal = document.getElementById('photo-modal');
+            modal.classList.toggle('hidden');
+            modal.classList.toggle('flex');
+        }
+    </script>
+</body>
+</html>
